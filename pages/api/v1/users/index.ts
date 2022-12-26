@@ -28,7 +28,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
   }
 
   const users = await prisma.user.findMany({
-    take: 10,
+    take: pageIndex ? 10: undefined,
     // skip: pageIndex ? 1: undefined,
     cursor: pageIndex ? {id: (Number(pageIndex)-1)*10+1} : undefined,
     orderBy: thisOrderBy ? orderBy : undefined,
