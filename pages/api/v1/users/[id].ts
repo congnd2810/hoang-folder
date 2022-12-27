@@ -86,7 +86,7 @@ export default async function handler(
         res.status(404).json({ error: "Failed to delete" });
       }
       break
-    case "UPDATE":
+    case "PUT":
       try {
         let item: {[key: string]: string} = {} 
         if (name) item.name = String(name);
