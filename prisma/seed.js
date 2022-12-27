@@ -53,6 +53,8 @@ function main() {
                     address = (0, falso_1.randAddress)();
                     item = {
                         name: (0, falso_1.randFullName)(),
+                        password: (0, falso_1.randPassword)(),
+                        username: (0, falso_1.randUserName)(),
                         email: (0, falso_1.randEmail)(),
                         phone: (0, falso_1.randPhoneNumber)(),
                         addressStreet: String(address.street),

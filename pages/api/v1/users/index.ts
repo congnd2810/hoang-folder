@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 import NextCors from "nextjs-cors"
 
 interface IOrderQuery {
-  [key: string]: String
+  [key: string]: string
 }
 
 const prisma = new PrismaClient()
@@ -34,6 +34,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     orderBy: thisOrderBy ? orderBy : undefined,
     select: {
       id: true,
+      username: true,
       name: true,
       email: true,
       phone: true,

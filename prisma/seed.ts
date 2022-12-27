@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { randEmail, randFullName, randAddress, randPhoneNumber } from '@ngneat/falso';
+import { randEmail, randFullName, randAddress, randPhoneNumber, randUserName, randPassword } from '@ngneat/falso';
 const prisma = new PrismaClient()
 
 async function main() {
@@ -8,6 +8,8 @@ async function main() {
     let address = randAddress()
     let item = {
       name: randFullName(),
+      password: randPassword(),
+      username: randUserName(),
       email: randEmail(),
       phone: randPhoneNumber(),
       addressStreet: String(address.street),
